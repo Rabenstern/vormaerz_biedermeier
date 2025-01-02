@@ -2,9 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: grid;
-    background-color: #ddd;
 }
 
 .top-sec {
@@ -15,7 +14,7 @@ body {
 header {
     display: grid;
     background-color: #000;
-    color: #fff;
+    color: white;
     padding: 0;
     justify-content: center;
     align-items: center;
@@ -44,22 +43,20 @@ header {
     font-size: 2rem;
 }
 
-.bottom-sec {
+.middle-sec {
     grid-row: 2;
-    display: grid;
-    justify-content: start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: lightgrey;
 }
 
 nav {
     display: grid;
-    grid-column: 1fr;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: 1fr;
-    height: 100vh;
-    background-color: #522;
-    color: #fff;
+    background-color: maroon;
+    color: white;
     padding: 1em;
-    width: min-content;
 }
 
 nav ul {
@@ -69,12 +66,12 @@ nav ul {
     grid-column: 1;
 }
 
-nav ul li {
+nav .nav-main li {
     padding: 1em;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid darkgrey;
 }
 
-nav ul li:last-child {
+nav .nav-main li:last-child {
     border-bottom: none;
 }
 
@@ -83,7 +80,36 @@ nav ul li a {
     color: white;
 }
 
+nav .nav-secondary li {
+    padding: 0.5em 1em;
+    border-bottom: none;
+}
+
 main {
-    grid-column: 2;
     padding: 2em;
+}
+
+.bottom-sec {
+    grid-row: 3;
+}
+
+footer {
+    padding: 5px;
+    background-color: grey;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: maroon;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        width: -webkit-fill-available;
+    }
 }
