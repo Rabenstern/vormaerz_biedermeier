@@ -1,46 +1,60 @@
+:root {
+    --main-item-color: rgba(0, 0, 0, 0.5);
+    --main-item-blur: blur(5px);
+    --border-radius: 1rem;
+    --border-gap: 1rem;
+}
+
 body {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 1.2rem;
+    font-family: Z003;
+    font-size: 1.5rem;
     display: grid;
+}
+
+a {
+    text-decoration: none;
+    color: lightblue;
 }
 
 .top-sec {
     grid-row: 1;
     display: grid;
+    padding-bottom: var(--border-gap);
 }
 
 header {
     display: grid;
-    background-color: #000;
-    color: white;
-    padding: 0;
-    justify-content: center;
+    /* background-color: var(--main-item-color); */
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: var(--main-item-blur);
+    padding: 5px;
+    justify-content: auto;
     align-items: center;
+    font-weight: bold;
 }
 
 .header-left {
     grid-column: 1;
-    text-align: right;
-}
-
-.header-center {
-    grid-column: 2;
-}
-
-.header-center img {
-    width: 4rem;
-}
-
-.header-right {
-    grid-column: 3;
     text-align: left;
 }
 
-.header-left,
+.header-left img {
+    width: 6rem;
+    padding: 0.8rem;
+    padding-left: 2rem;
+}
+
 .header-right {
-    font-size: 2rem;
+    grid-column: 2;
+    text-align: left;
+    font-size: 4rem;
 }
 
 .middle-sec {
@@ -49,14 +63,15 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
-    background-color: lightgrey;
+    padding: 0 var(--border-gap) var(--border-gap) var(--border-gap);
 }
 
 nav {
     display: grid;
-    background-color: maroon;
-    color: white;
+    background-color: var(--main-item-color);
+    backdrop-filter: var(--main-item-blur);
     padding: 1em;
+    border-radius: var(--border-radius);
 }
 
 nav ul {
@@ -87,21 +102,34 @@ nav .nav-secondary li {
 
 main {
     padding: 2em;
+    margin-left: var(--border-gap);
+    background-color: var(--main-item-color);
+    backdrop-filter: var(--main-item-blur);
+    flex-grow: 1;
+    border-radius: var(--border-radius);
 }
 
 .bottom-sec {
     grid-row: 3;
+    padding: 0 var(--border-gap) var(--border-gap) var(--border-gap);
 }
 
 footer {
     padding: 5px;
-    background-color: grey;
+    background-color: var(--main-item-color);
+    backdrop-filter: var(--main-item-blur);
     text-align: center;
+    border-radius: var(--border-radius);
 }
 
-footer a {
-    text-decoration: none;
-    color: maroon;
+footer .footer-item {
+    padding: 0 5px;
+    display: inline;
+    border-right: solid 1px darkgray;
+}
+
+footer .footer-item:last-child {
+    border:none;
 }
 
 @media screen and (max-width: 1000px) {
@@ -111,5 +139,10 @@ footer a {
 
     nav {
         width: -webkit-fill-available;
+        text-align: center;
+    }
+
+    main {
+        margin: var(--border-gap) 0 0 0;
     }
 }
