@@ -173,7 +173,7 @@ footer .footer-item:last-child {
 
 @media screen and (max-width: 1000px) {
     body {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     #title-left {
@@ -197,5 +197,13 @@ footer .footer-item:last-child {
 
     main {
         margin: var(--border-gap) 0 0 0;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .autorin {
+        width: 15rem;
     }
 }
